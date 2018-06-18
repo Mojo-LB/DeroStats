@@ -97,7 +97,7 @@ $(function() {
     }, 5000);
 
     function createMap() {
-        var animation = screen.width >= 1080 ? true : false;
+        var animation = false;
         var width = $('#container').parent().width(),
         height = $('#container').parent().height();
         $('#container').css('height', height+'px');
@@ -393,9 +393,9 @@ $(function() {
             }
         };
 
-        if (screen.width < 1080) {
+        //if (screen.width < 1080) {
             options.options.animation = false;
-        }
+        //}
 
         var myChart = new Chart(ctx, options);
         allChart[selector[0].id] = myChart;
@@ -595,7 +595,7 @@ $(function() {
                 }]
             },
             options: {
-                //animation: false,
+                animation: false,
                 segmentShowStroke: false,
                 maintainAspectRatio: false,
                 legend: {
@@ -689,9 +689,9 @@ $(function() {
             }
         };
 
-        if (screen.width < 1080) {
+        //if (screen.width < 1080) {
             options.options.animation = false;
-        }
+        //}
 
         var myChart = new Chart(ctx, options);
         allChart[node.id] = myChart;

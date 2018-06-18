@@ -18,19 +18,19 @@ $(function() {
     var socket = io.connect('/website');
 
     document.addEventListener('visibilitychange', function () {
-      if (document.hidden) {
-            if (socket.connected) {
+      //if (document.hidden) {
+        //    if (socket.connected) {
                 clearInterval(intervalLastBlock);
                 for (var node in nodes) {
                     clearInterval(nodes[node].interval);
                 } 
-                socket.close();
-            }      
-        } else {
-            if (!socket.connected) {
-                socket.open();
-            }
-        }
+        //       socket.close();
+        //    }      
+        //} else {
+        //    if (!socket.connected) {
+        //        socket.open();
+        //    }
+        //}
     }, false);
 
     socket.on('daemon', function(data) {
@@ -87,13 +87,13 @@ $(function() {
     });
 
     setInterval(function() {
-        if (socket.connected) {
+        //if (socket.connected) {
             socket.emit('latency', Date.now(), function(object) {
                 var latency = Date.now() - object.startTime;
                 $('span#myLatency').html(latency+' ms').attr('class', getColorLatency(latency));
                 $('span#userConnected').html(object.userConnected);
             });
-        }
+        //}
     }, 5000);
 
     function createMap() {

@@ -17,13 +17,13 @@ $(function() {
     // Connexion à socket.io
     var socket = io.connect('/website');
 
-    document.addEventListener('visibilitychange', function () {
+    //document.addEventListener('visibilitychange', function () {
       //if (document.hidden) {
         //    if (socket.connected) {
-                clearInterval(intervalLastBlock);
-                for (var node in nodes) {
-                    clearInterval(nodes[node].interval);
-                } 
+        //        clearInterval(intervalLastBlock);
+        //        for (var node in nodes) {
+        //            clearInterval(nodes[node].interval);
+        //        } 
         //       socket.close();
         //    }      
         //} else {
@@ -31,7 +31,7 @@ $(function() {
         //        socket.open();
         //    }
         //}
-    }, false);
+    //}, false);
 
     socket.on('daemon', function(data) {
         $('#networkBlockHeight').html(data.lastBlockHeader.height + ' / ' + data.lastBlockHeader.topoheight);

@@ -6,7 +6,7 @@ var fs = require('fs');
 var readlineSync = require('readline-sync');
 
 // Don't modify this URL
-const serverURL = 'http://54.37.72.72:8080/nodes';
+const serverURL = 'http://stats.atlantis.dero.live:8080/nodes';
 const VERSION = '0.3';
 
 var config = null;

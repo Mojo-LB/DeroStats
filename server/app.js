@@ -231,7 +231,7 @@ mongoDbConnection(function(databaseConnection) {
                 }
 
                 // Send to website
-                if (collectedNodes[ip].hasOwnProperty('geo')) {
+                if (collectedNodes[ip].hasOwnProperty('geo') && collectedNodes[ip].hasOwnProperty('data')) {
                     io.of('/website').emit('node', collectedNodes[ip]);
                 }
 

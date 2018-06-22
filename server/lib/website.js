@@ -15,8 +15,8 @@ io.of('/website').on('connection', function (socket) {
         socket.emit('derodag', deroDag);
     }
 
-    for (var node in collectedNodes) {
-    	if (collectedNodes[node].hasOwnProperty('geo')) {
+     for (var node in collectedNodes) {
+        if (collectedNodes[node].hasOwnProperty('geo') && collectedNodes[node].hasOwnProperty('data')) {
             socket.emit('node', collectedNodes[node]);
         }
     }
